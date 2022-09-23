@@ -1,0 +1,3061 @@
+Updating Model file from 30000 to latest format...
+Loaded model Tug_of_War from file Tug_of_War.osim
+Couldn't find file 'block.vtp'.
+Couldn't find file 'block.vtp'.
+Couldn't find file 'checkered_floor.vtp'.
+Couldn't find file 'block.vtp'.
+ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+Running tool tugOfWar.
+No external loads will be applied (external loads file not specified).
+MODEL: Tug_of_War
+
+numStates = 6
+numCoordinates = 1
+numSpeeds = 1
+numActuators = 2
+numBodies = 1
+numConstraints = 0
+numProbes = 0
+
+ANALYSES (total: 0)
+
+BODIES (total: 1)
+body[0] = block. mass: 20
+              moments of inertia:  ~[0.133333,0.133333,0.133333]
+              products of inertia: ~[0,0,0]
+
+JOINTS (total: 1)
+joint[0] = ground_block. parent: ground_offset, child: block_offset
+
+ACTUATORS (total: 2)
+actuator[0] = muscle1
+actuator[1] = muscle2
+
+STATES (total: 6)
+y[0] = /jointset/ground_block/block_tz/value
+y[1] = /jointset/ground_block/block_tz/speed
+y[2] = /forceset/muscle1/activation
+y[3] = /forceset/muscle1/fiber_length
+y[4] = /forceset/muscle2/activation
+y[5] = /forceset/muscle2/fiber_length
+
+
+Integrating from 0 to 3
+Printing results of investigation tugOfWar to ./.
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Outputs from /jointset/slider [SliderJoint]
+===========================================
+      [double]  power
+  [SpatialVec]  reaction_on_child
+  [SpatialVec]  reaction_on_parent
+
+Outputs from /jointset/slider/yCoord [Coordinate]
+=================================================
+  [double]  acceleration
+  [double]  speed
+  [double]  value
+
+Outputs from /jointset/slider/ground_offset [PhysicalOffsetFrame]
+=================================================================
+  [SpatialVec]  acceleration
+        [Vec3]  angular_acceleration
+        [Vec3]  angular_velocity
+        [Vec3]  linear_acceleration
+        [Vec3]  linear_velocity
+        [Vec3]  position
+    [Rotation]  rotation
+   [Transform]  transform
+  [SpatialVec]  velocity
+
+Outputs from /jointset/slider/pelvis_offset [PhysicalOffsetFrame]
+=================================================================
+  [SpatialVec]  acceleration
+        [Vec3]  angular_acceleration
+        [Vec3]  angular_velocity
+        [Vec3]  linear_acceleration
+        [Vec3]  linear_velocity
+        [Vec3]  position
+    [Rotation]  rotation
+   [Transform]  transform
+  [SpatialVec]  velocity
+
+Outputs from /forceset/vastus [Millard2012EquilibriumMuscle]
+============================================================
+  [double]  activation
+  [double]  active_fiber_force
+  [double]  active_fiber_force_along_tendon
+  [double]  active_force_length_multiplier
+  [double]  actuation
+  [double]  cos_pennation_angle
+  [double]  excitation
+  [double]  fiber_active_power
+  [double]  fiber_force
+  [double]  fiber_force_along_tendon
+  [double]  fiber_length
+  [double]  fiber_length_along_tendon
+  [double]  fiber_passive_power
+  [double]  fiber_stiffness
+  [double]  fiber_stiffness_along_tendon
+  [double]  fiber_velocity
+  [double]  fiber_velocity_along_tendon
+  [double]  force_velocity_multiplier
+  [double]  muscle_power
+  [double]  muscle_stiffness
+  [double]  normalized_fiber_length
+  [double]  normalized_fiber_velocity
+  [double]  passive_fiber_damping_force
+  [double]  passive_fiber_damping_force_along_tendon
+  [double]  passive_fiber_elastic_force
+  [double]  passive_fiber_elastic_force_along_tendon
+  [double]  passive_fiber_force
+  [double]  passive_fiber_force_along_tendon
+  [double]  passive_force_multiplier
+  [double]  pennation_angle
+  [double]  pennation_angular_velocity
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tendon_force
+  [double]  tendon_length
+  [double]  tendon_power
+  [double]  tendon_stiffness
+  [double]  tendon_strain
+  [double]  tendon_velocity
+  [double]  tension
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'device_active' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+            [PathActuator]  /cableAtoBactive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Outputs from /device_active/cableAtoBactive [PathActuator]
+==========================================================
+  [double]  actuation
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tension
+
+Outputs from /device_active/cableAtoBactive/geompath [GeometryPath]
+===================================================================
+  [double]  length
+  [double]  lengthening_speed
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'device_active' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+            [PathActuator]  /cableAtoBactive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Outputs from /device_active/cableAtoBactive [PathActuator]
+==========================================================
+  [double]  actuation
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tension
+
+Outputs from /device_active/cableAtoBactive/geompath [GeometryPath]
+===================================================================
+  [double]  length
+  [double]  lengthening_speed
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'device_active' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+            [PathActuator]  /cableAtoBactive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Outputs from /device_active/cableAtoBactive [PathActuator]
+==========================================================
+  [double]  actuation
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tension
+
+Outputs from /device_active/cableAtoBactive/geompath [GeometryPath]
+===================================================================
+  [double]  length
+  [double]  lengthening_speed
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'device_active' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+            [PathActuator]  /cableAtoBactive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Outputs from /device_active/cableAtoBactive [PathActuator]
+==========================================================
+  [double]  actuation
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tension
+
+Outputs from /device_active/cableAtoBactive/geompath [GeometryPath]
+===================================================================
+  [double]  length
+  [double]  lengthening_speed
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'device_active' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+            [PathActuator]  /cableAtoBactive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Outputs from /device_active/cableAtoBactive [PathActuator]
+==========================================================
+  [double]  actuation
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tension
+
+Outputs from /device_active/cableAtoBactive/geompath [GeometryPath]
+===================================================================
+  [double]  length
+  [double]  lengthening_speed
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'device_active' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+            [PathActuator]  /cableAtoBactive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Outputs from /device_active/cableAtoBactive [PathActuator]
+==========================================================
+  [double]  actuation
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tension
+
+Outputs from /device_active/cableAtoBactive/geompath [GeometryPath]
+===================================================================
+  [double]  length
+  [double]  lengthening_speed
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'device_active' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+            [PathActuator]  /cableAtoBactive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Outputs from /device_active/cableAtoBactive [PathActuator]
+==========================================================
+  [double]  actuation
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tension
+
+Outputs from /device_active/cableAtoBactive/geompath [GeometryPath]
+===================================================================
+  [double]  length
+  [double]  lengthening_speed
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Class name and absolute path name for descendants of 'device_passive' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_passive
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+      [ClutchedPathSpring]  /cableAtoBpassive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Class name and absolute path name for descendants of 'device_active' that are of type Component:
+
+            [HopperDevice]  /
+                    [Body]  /cuffA_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+                    [Body]  /cuffB_active
+           [FrameGeometry]      /frame_geometry
+                  [Sphere]      /sphere
+           [WrapObjectSet]      /wrapobjectset
+               [WeldJoint]  /anchorA
+               [WeldJoint]  /anchorB
+            [PathActuator]  /cableAtoBactive
+            [GeometryPath]      /geompath
+               [PathPoint]          /pointA
+                 [Station]              /station
+               [PathPoint]          /pointB
+                 [Station]              /station
+    [PrescribedController]  /controller
+
+Outputs from /device_active/cableAtoBactive [PathActuator]
+==========================================================
+  [double]  actuation
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tension
+
+Outputs from /device_active/cableAtoBactive/geompath [GeometryPath]
+===================================================================
+  [double]  length
+  [double]  lengthening_speed
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointA/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB [PathPoint]
+=======================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Outputs from /device_active/cableAtoBactive/geompath/pointB/station [Station]
+=============================================================================
+  [Vec3]  acceleration
+  [Vec3]  location
+  [Vec3]  velocity
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Outputs from /jointset/slider [SliderJoint]
+===========================================
+      [double]  power
+  [SpatialVec]  reaction_on_child
+  [SpatialVec]  reaction_on_parent
+
+Outputs from /jointset/slider/yCoord [Coordinate]
+=================================================
+  [double]  acceleration
+  [double]  speed
+  [double]  value
+
+Outputs from /jointset/slider/ground_offset [PhysicalOffsetFrame]
+=================================================================
+  [SpatialVec]  acceleration
+        [Vec3]  angular_acceleration
+        [Vec3]  angular_velocity
+        [Vec3]  linear_acceleration
+        [Vec3]  linear_velocity
+        [Vec3]  position
+    [Rotation]  rotation
+   [Transform]  transform
+  [SpatialVec]  velocity
+
+Outputs from /jointset/slider/pelvis_offset [PhysicalOffsetFrame]
+=================================================================
+  [SpatialVec]  acceleration
+        [Vec3]  angular_acceleration
+        [Vec3]  angular_velocity
+        [Vec3]  linear_acceleration
+        [Vec3]  linear_velocity
+        [Vec3]  position
+    [Rotation]  rotation
+   [Transform]  transform
+  [SpatialVec]  velocity
+
+Outputs from /forceset/vastus [Millard2012EquilibriumMuscle]
+============================================================
+  [double]  activation
+  [double]  active_fiber_force
+  [double]  active_fiber_force_along_tendon
+  [double]  active_force_length_multiplier
+  [double]  actuation
+  [double]  cos_pennation_angle
+  [double]  excitation
+  [double]  fiber_active_power
+  [double]  fiber_force
+  [double]  fiber_force_along_tendon
+  [double]  fiber_length
+  [double]  fiber_length_along_tendon
+  [double]  fiber_passive_power
+  [double]  fiber_stiffness
+  [double]  fiber_stiffness_along_tendon
+  [double]  fiber_velocity
+  [double]  fiber_velocity_along_tendon
+  [double]  force_velocity_multiplier
+  [double]  muscle_power
+  [double]  muscle_stiffness
+  [double]  normalized_fiber_length
+  [double]  normalized_fiber_velocity
+  [double]  passive_fiber_damping_force
+  [double]  passive_fiber_damping_force_along_tendon
+  [double]  passive_fiber_elastic_force
+  [double]  passive_fiber_elastic_force_along_tendon
+  [double]  passive_fiber_force
+  [double]  passive_fiber_force_along_tendon
+  [double]  passive_force_multiplier
+  [double]  pennation_angle
+  [double]  pennation_angular_velocity
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tendon_force
+  [double]  tendon_length
+  [double]  tendon_power
+  [double]  tendon_stiffness
+  [double]  tendon_strain
+  [double]  tendon_velocity
+  [double]  tension
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Outputs from /jointset/slider [SliderJoint]
+===========================================
+      [double]  power
+  [SpatialVec]  reaction_on_child
+  [SpatialVec]  reaction_on_parent
+
+Outputs from /jointset/slider/yCoord [Coordinate]
+=================================================
+  [double]  acceleration
+  [double]  speed
+  [double]  value
+
+Outputs from /jointset/slider/ground_offset [PhysicalOffsetFrame]
+=================================================================
+  [SpatialVec]  acceleration
+        [Vec3]  angular_acceleration
+        [Vec3]  angular_velocity
+        [Vec3]  linear_acceleration
+        [Vec3]  linear_velocity
+        [Vec3]  position
+    [Rotation]  rotation
+   [Transform]  transform
+  [SpatialVec]  velocity
+
+Outputs from /jointset/slider/pelvis_offset [PhysicalOffsetFrame]
+=================================================================
+  [SpatialVec]  acceleration
+        [Vec3]  angular_acceleration
+        [Vec3]  angular_velocity
+        [Vec3]  linear_acceleration
+        [Vec3]  linear_velocity
+        [Vec3]  position
+    [Rotation]  rotation
+   [Transform]  transform
+  [SpatialVec]  velocity
+
+Outputs from /forceset/vastus [Millard2012EquilibriumMuscle]
+============================================================
+  [double]  activation
+  [double]  active_fiber_force
+  [double]  active_fiber_force_along_tendon
+  [double]  active_force_length_multiplier
+  [double]  actuation
+  [double]  cos_pennation_angle
+  [double]  excitation
+  [double]  fiber_active_power
+  [double]  fiber_force
+  [double]  fiber_force_along_tendon
+  [double]  fiber_length
+  [double]  fiber_length_along_tendon
+  [double]  fiber_passive_power
+  [double]  fiber_stiffness
+  [double]  fiber_stiffness_along_tendon
+  [double]  fiber_velocity
+  [double]  fiber_velocity_along_tendon
+  [double]  force_velocity_multiplier
+  [double]  muscle_power
+  [double]  muscle_stiffness
+  [double]  normalized_fiber_length
+  [double]  normalized_fiber_velocity
+  [double]  passive_fiber_damping_force
+  [double]  passive_fiber_damping_force_along_tendon
+  [double]  passive_fiber_elastic_force
+  [double]  passive_fiber_elastic_force_along_tendon
+  [double]  passive_fiber_force
+  [double]  passive_fiber_force_along_tendon
+  [double]  passive_force_multiplier
+  [double]  pennation_angle
+  [double]  pennation_angular_velocity
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tendon_force
+  [double]  tendon_length
+  [double]  tendon_power
+  [double]  tendon_stiffness
+  [double]  tendon_strain
+  [double]  tendon_velocity
+  [double]  tension
+
+Class name and absolute path name for descendants of 'Dennis' that are of type Component:
+
+                                     [Model]  /
+                                    [Ground]  /ground
+                             [FrameGeometry]      /frame_geometry
+                             [WrapObjectSet]      /wrapobjectset
+                                   [BodySet]  /bodyset
+                                      [Body]      /pelvis
+                             [FrameGeometry]          /frame_geometry
+                                     [Brick]          /pelvis_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /thigh
+                       [PhysicalOffsetFrame]          /patellaFrame
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                              [WrapCylinder]                  /patella
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                      [Body]      /shank
+                     [PointOnLineConstraint]          /pointonlineconstraint
+                       [PhysicalOffsetFrame]          /deviceAttach
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                             [FrameGeometry]          /frame_geometry
+                                  [Cylinder]          /thigh_geom_1
+                             [WrapObjectSet]          /wrapobjectset
+                                  [JointSet]  /jointset
+                               [SliderJoint]      /slider
+                                [Coordinate]          /yCoord
+                       [PhysicalOffsetFrame]          /ground_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /pelvis_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                                  [PinJoint]      /hip
+                       [PhysicalOffsetFrame]          /hip_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /hipLigaments
+                                [Coordinate]          /hipFlexion
+                                  [PinJoint]      /knee
+                       [PhysicalOffsetFrame]          /knee_shank_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                       [PhysicalOffsetFrame]          /knee_thigh_offset
+                             [FrameGeometry]              /frame_geometry
+                             [WrapObjectSet]              /wrapobjectset
+                      [CoordinateLimitForce]          /kneeLigaments
+                                [Coordinate]          /kneeFlexion
+                             [ControllerSet]  /controllerset
+                      [PrescribedController]      /prescribedcontroller
+                             [ConstraintSet]  /constraintset
+                                  [ForceSet]  /forceset
+                         [HuntCrossleyForce]      /huntcrossleyforce
+              [Millard2012EquilibriumMuscle]      /vastus
+            [MuscleFixedWidthPennationModel]          /penMdl
+    [MuscleFirstOrderActivationDynamicModel]          /actMdl
+                              [GeometryPath]          /geometrypath
+                                 [PathPoint]              /origin
+                                   [Station]                  /station
+                                 [PathPoint]              /insertion
+                                   [Station]                  /station
+                                  [PathWrap]              /pathwrap
+                             [PathWrapPoint]                  /pwpt1
+                                   [Station]                      /station
+                             [PathWrapPoint]                  /pwpt2
+                                   [Station]                      /station
+                                 [MarkerSet]  /markerset
+                        [ContactGeometrySet]  /contactgeometryset
+                          [ContactHalfSpace]      /floor
+                             [ContactSphere]      /foot
+                                  [ProbeSet]  /probeset
+                              [ComponentSet]  /componentset
+
+Outputs from /jointset/slider [SliderJoint]
+===========================================
+      [double]  power
+  [SpatialVec]  reaction_on_child
+  [SpatialVec]  reaction_on_parent
+
+Outputs from /jointset/slider/yCoord [Coordinate]
+=================================================
+  [double]  acceleration
+  [double]  speed
+  [double]  value
+
+Outputs from /jointset/slider/ground_offset [PhysicalOffsetFrame]
+=================================================================
+  [SpatialVec]  acceleration
+        [Vec3]  angular_acceleration
+        [Vec3]  angular_velocity
+        [Vec3]  linear_acceleration
+        [Vec3]  linear_velocity
+        [Vec3]  position
+    [Rotation]  rotation
+   [Transform]  transform
+  [SpatialVec]  velocity
+
+Outputs from /jointset/slider/pelvis_offset [PhysicalOffsetFrame]
+=================================================================
+  [SpatialVec]  acceleration
+        [Vec3]  angular_acceleration
+        [Vec3]  angular_velocity
+        [Vec3]  linear_acceleration
+        [Vec3]  linear_velocity
+        [Vec3]  position
+    [Rotation]  rotation
+   [Transform]  transform
+  [SpatialVec]  velocity
+
+Outputs from /forceset/vastus [Millard2012EquilibriumMuscle]
+============================================================
+  [double]  activation
+  [double]  active_fiber_force
+  [double]  active_fiber_force_along_tendon
+  [double]  active_force_length_multiplier
+  [double]  actuation
+  [double]  cos_pennation_angle
+  [double]  excitation
+  [double]  fiber_active_power
+  [double]  fiber_force
+  [double]  fiber_force_along_tendon
+  [double]  fiber_length
+  [double]  fiber_length_along_tendon
+  [double]  fiber_passive_power
+  [double]  fiber_stiffness
+  [double]  fiber_stiffness_along_tendon
+  [double]  fiber_velocity
+  [double]  fiber_velocity_along_tendon
+  [double]  force_velocity_multiplier
+  [double]  muscle_power
+  [double]  muscle_stiffness
+  [double]  normalized_fiber_length
+  [double]  normalized_fiber_velocity
+  [double]  passive_fiber_damping_force
+  [double]  passive_fiber_damping_force_along_tendon
+  [double]  passive_fiber_elastic_force
+  [double]  passive_fiber_elastic_force_along_tendon
+  [double]  passive_fiber_force
+  [double]  passive_fiber_force_along_tendon
+  [double]  passive_force_multiplier
+  [double]  pennation_angle
+  [double]  pennation_angular_velocity
+  [double]  potential_energy
+  [double]  power
+  [double]  speed
+  [double]  tendon_force
+  [double]  tendon_length
+  [double]  tendon_power
+  [double]  tendon_stiffness
+  [double]  tendon_strain
+  [double]  tendon_velocity
+  [double]  tension
+
